@@ -3799,3 +3799,759 @@ a:focus-visible {
     outline: 2px solid var(--secondary-color);
     outline-offset: 4px;
 }
+
+/* ==================== */
+/* CHANEL COUTURE EXPERIENCE */
+/* ==================== */
+
+/* Chanel Color System */
+:root {
+    --chanel-black: #000000;
+    --chanel-white: #FFFFFF;
+    --chanel-beige: #F5F0E8;
+    --chanel-cream: #FAF7F2;
+    --chanel-grey: #8B8B8B;
+    --chanel-light-grey: #E5E5E5;
+    --chanel-border: #D4D4D4;
+}
+
+.chanel-experience {
+    background: var(--chanel-white);
+    color: var(--chanel-black);
+}
+
+/* ==================== */
+/* Chanel Hero Section */
+/* ==================== */
+
+.chanel-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--chanel-white);
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    border-bottom: 1px solid var(--chanel-border);
+}
+
+.chanel-hero-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-grey);
+    margin-bottom: 3rem;
+}
+
+.chanel-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.title-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: var(--chanel-black);
+    line-height: 1;
+}
+
+.title-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--chanel-black);
+}
+
+.title-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+}
+
+.chanel-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--chanel-grey);
+    margin-bottom: 4rem;
+}
+
+.hero-cta-minimal {
+    margin-top: 4rem;
+}
+
+.chanel-cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border: 1px solid var(--chanel-black);
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.chanel-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--chanel-black);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.chanel-cta:hover::before {
+    left: 0;
+}
+
+.chanel-cta:hover {
+    color: var(--chanel-white);
+}
+
+/* ==================== */
+/* Campaign Section */
+/* ==================== */
+
+.chanel-campaign {
+    padding: 6rem 0;
+    background: var(--chanel-white);
+}
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.campaign-visual {
+    position: relative;
+    min-height: 700px;
+}
+
+.campaign-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--chanel-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-content {
+    text-align: center;
+}
+
+.placeholder-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-white);
+}
+
+.campaign-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    background: var(--chanel-cream);
+}
+
+.campaign-text {
+    max-width: 500px;
+}
+
+.campaign-season {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-grey);
+    margin-bottom: 2rem;
+}
+
+.campaign-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--chanel-black);
+    margin-bottom: 2rem;
+}
+
+.campaign-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--chanel-black);
+    margin-bottom: 2.5rem;
+}
+
+.chanel-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--chanel-black);
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.chanel-link:hover {
+    border-bottom-color: transparent;
+}
+
+/* ==================== */
+/* Collections Grid */
+/* ==================== */
+
+.chanel-collections {
+    padding: 6rem 2rem;
+    background: var(--chanel-white);
+}
+
+.collections-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.collection-block {
+    text-align: center;
+}
+
+.collection-visual {
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.collection-placeholder {
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collection-block:hover .collection-placeholder {
+    transform: scale(1.05);
+}
+
+.black-bg {
+    background: var(--chanel-black);
+    color: var(--chanel-white);
+}
+
+.white-bg {
+    background: var(--chanel-white);
+    border: 1px solid var(--chanel-border);
+}
+
+.beige-bg {
+    background: var(--chanel-beige);
+}
+
+.dark-text {
+    color: var(--chanel-black);
+}
+
+.collection-meta {
+    padding: 0 1rem;
+}
+
+.collection-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--chanel-black);
+    margin-bottom: 0.75rem;
+}
+
+.collection-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--chanel-grey);
+    margin-bottom: 1.5rem;
+}
+
+.chanel-link-small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--chanel-black);
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.chanel-link-small:hover {
+    border-bottom-color: transparent;
+}
+
+/* ==================== */
+/* Savoir-Faire Section */
+/* ==================== */
+
+.chanel-savoir-faire {
+    padding: 8rem 2rem;
+    background: var(--chanel-cream);
+    border-top: 1px solid var(--chanel-border);
+    border-bottom: 1px solid var(--chanel-border);
+}
+
+.savoir-faire-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.savoir-faire-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-grey);
+    margin-bottom: 2rem;
+}
+
+.savoir-faire-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--chanel-black);
+    margin-bottom: 3rem;
+}
+
+.savoir-faire-text {
+    margin-bottom: 4rem;
+}
+
+.savoir-faire-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--chanel-black);
+    margin-bottom: 1.5rem;
+}
+
+.savoir-faire-stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.stat-minimal {
+    text-align: left;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--chanel-black);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--chanel-grey);
+}
+
+.savoir-faire-visual {
+    position: relative;
+}
+
+.savoir-faire-placeholder {
+    aspect-ratio: 4/5;
+    background: var(--chanel-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-white);
+}
+
+/* ==================== */
+/* Maison Section */
+/* ==================== */
+
+.chanel-maison {
+    padding: 8rem 2rem;
+    background: var(--chanel-white);
+}
+
+.maison-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.maison-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.maison-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: var(--chanel-black);
+    margin-bottom: 1rem;
+}
+
+.maison-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--chanel-grey);
+}
+
+.maison-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.maison-col h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+    margin-bottom: 1.5rem;
+}
+
+.maison-col p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--chanel-black);
+}
+
+/* ==================== */
+/* Boutiques Section */
+/* ==================== */
+
+.chanel-boutiques {
+    padding: 8rem 2rem;
+    background: var(--chanel-beige);
+    border-top: 1px solid var(--chanel-border);
+}
+
+.boutiques-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.boutiques-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--chanel-black);
+}
+
+.boutiques-list {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.boutique-item {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--chanel-white);
+    border: 1px solid var(--chanel-border);
+}
+
+.boutique-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--chanel-black);
+    margin-bottom: 1.5rem;
+}
+
+.boutique-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--chanel-black);
+    margin-bottom: 2rem;
+}
+
+/* ==================== */
+/* Newsletter Section */
+/* ==================== */
+
+.chanel-newsletter {
+    padding: 6rem 2rem;
+    background: var(--chanel-white);
+    border-top: 1px solid var(--chanel-border);
+}
+
+.newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--chanel-black);
+    margin-bottom: 1rem;
+}
+
+.newsletter-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--chanel-grey);
+    margin-bottom: 3rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--chanel-border);
+    border-right: none;
+    background: var(--chanel-white);
+    color: var(--chanel-black);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input:focus {
+    border-color: var(--chanel-black);
+}
+
+.newsletter-input::placeholder {
+    color: var(--chanel-grey);
+}
+
+.newsletter-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: 1px solid var(--chanel-black);
+    background: var(--chanel-black);
+    color: var(--chanel-white);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newsletter-button:hover {
+    background: var(--chanel-white);
+    color: var(--chanel-black);
+}
+
+/* ==================== */
+/* Chanel Responsive Design */
+/* ==================== */
+
+@media (max-width: 1024px) {
+    .campaign-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campaign-visual {
+        min-height: 500px;
+    }
+
+    .collections-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .savoir-faire-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .maison-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .boutiques-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chanel-hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .title-main {
+        letter-spacing: 0.2em;
+    }
+
+    .title-sub {
+        letter-spacing: 0.3em;
+    }
+
+    .campaign-details {
+        padding: 3rem 2rem;
+    }
+
+    .chanel-collections {
+        padding: 4rem 1.5rem;
+    }
+
+    .chanel-savoir-faire {
+        padding: 5rem 1.5rem;
+    }
+
+    .savoir-faire-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .chanel-maison {
+        padding: 5rem 1.5rem;
+    }
+
+    .chanel-boutiques {
+        padding: 5rem 1.5rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input {
+        border-right: 1px solid var(--chanel-border);
+        border-bottom: none;
+    }
+
+    .newsletter-button {
+        border-top: 1px solid var(--chanel-black);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-label {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+    }
+
+    .chanel-tagline {
+        margin-bottom: 3rem;
+    }
+
+    .chanel-cta {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        padding: 0.875rem 2rem;
+    }
+
+    .campaign-details {
+        padding: 2rem 1.5rem;
+    }
+
+    .campaign-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .collection-meta {
+        padding: 0;
+    }
+
+    .savoir-faire-label {
+        font-size: 0.65rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .boutique-item {
+        padding: 2rem 1.5rem;
+    }
+}
