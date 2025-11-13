@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready-to-Wear - MAISON ÉLÉGANCE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MAISON ÉLÉGANCE</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="haute-couture.html" class="nav-link">Haute Couture</a></li>
+                <li><a href="bridal.html" class="nav-link">Bridal</a></li>
+                <li><a href="ready-to-wear.html" class="nav-link active">Ready-to-Wear</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header rtw-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Ready-to-Wear</h1>
+            <p>Luxury Fashion for the Modern Woman</p>
+        </div>
+    </section>
+
+    <!-- Collection Introduction -->
+    <section class="collection-intro">
+        <div class="intro-container">
+            <h2>Effortless Luxury</h2>
+            <p>Our ready-to-wear collection brings the elegance of haute couture to your everyday wardrobe. Each piece is crafted from the finest materials and designed to transition seamlessly from day to evening, from the office to special occasions.</p>
+            <p>Experience luxury fashion that combines impeccable tailoring, premium fabrics, and timeless design for the discerning modern woman.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All Items</button>
+            <button class="filter-btn" data-category="dresses">Dresses</button>
+            <button class="filter-btn" data-category="outerwear">Outerwear</button>
+            <button class="filter-btn" data-category="evening">Evening</button>
+            <button class="filter-btn" data-category="separates">Separates</button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="products-container">
+            <div class="product-card" data-category="outerwear">
+                <div class="product-image" style="background: linear-gradient(135deg, #8b7355 0%, #6b5644 100%);">
+                    <div class="image-placeholder">
+                        <span>CASHMERE COAT</span>
+                    </div>
+                    <div class="product-badge">NEW ARRIVAL</div>
+                </div>
+                <div class="product-details">
+                    <h3>Cashmere Wrap Coat</h3>
+                    <p class="product-category">Outerwear</p>
+                    <p class="product-description">100% pure cashmere coat with belt detail</p>
+                    <p class="product-price">$3,850</p>
+                    <a href="product-detail.html?item=cashmere-wrap-coat" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="evening">
+                <div class="product-image" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                    <div class="image-placeholder">
+                        <span>SILK DRESS</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Midnight Silk Gown</h3>
+                    <p class="product-category">Evening Wear</p>
+                    <p class="product-description">Fluid silk charmeuse evening dress</p>
+                    <p class="product-price">$2,450</p>
+                    <a href="product-detail.html?item=midnight-silk-gown" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="dresses">
+                <div class="product-image" style="background: linear-gradient(135deg, #c9a87c 0%, #b89968 100%);">
+                    <div class="image-placeholder">
+                        <span>COCKTAIL DRESS</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Golden Hour Dress</h3>
+                    <p class="product-category">Cocktail</p>
+                    <p class="product-description">Metallic jacquard cocktail dress</p>
+                    <p class="product-price">$1,895</p>
+                    <a href="product-detail.html?item=golden-hour-dress" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="separates">
+                <div class="product-image" style="background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);">
+                    <div class="image-placeholder">
+                        <span>TAILORED BLAZER</span>
+                    </div>
+                    <div class="product-badge">BESTSELLER</div>
+                </div>
+                <div class="product-details">
+                    <h3>Executive Blazer</h3>
+                    <p class="product-category">Separates</p>
+                    <p class="product-description">Italian wool blend tailored blazer</p>
+                    <p class="product-price">$2,150</p>
+                    <a href="product-detail.html?item=executive-blazer" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="dresses">
+                <div class="product-image" style="background: linear-gradient(135deg, #8b7355 0%, #6b5644 100%);">
+                    <div class="image-placeholder">
+                        <span>DAY DRESS</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Caramel Midi Dress</h3>
+                    <p class="product-category">Day Wear</p>
+                    <p class="product-description">Wool crepe midi dress with tie waist</p>
+                    <p class="product-price">$1,450</p>
+                    <a href="product-detail.html?item=caramel-midi-dress" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <div class="product-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);">
+                    <div class="image-placeholder">
+                        <span>LEATHER JACKET</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Noir Leather Jacket</h3>
+                    <p class="product-category">Outerwear</p>
+                    <p class="product-description">Butter-soft lambskin leather jacket</p>
+                    <p class="product-price">$3,200</p>
+                    <a href="product-detail.html?item=noir-leather-jacket" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="evening">
+                <div class="product-image" style="background: linear-gradient(135deg, #c9a87c 0%, #b89968 100%);">
+                    <div class="image-placeholder">
+                        <span>EVENING GOWN</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Champagne Dreams</h3>
+                    <p class="product-category">Evening Wear</p>
+                    <p class="product-description">Sequined tulle evening gown</p>
+                    <p class="product-price">$2,850</p>
+                    <a href="product-detail.html?item=champagne-dreams" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="separates">
+                <div class="product-image" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                    <div class="image-placeholder">
+                        <span>SILK BLOUSE</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Signature Silk Blouse</h3>
+                    <p class="product-category">Separates</p>
+                    <p class="product-description">Pure silk charmeuse blouse</p>
+                    <p class="product-price">$895</p>
+                    <a href="product-detail.html?item=signature-silk-blouse" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="separates">
+                <div class="product-image" style="background: linear-gradient(135deg, #8b7355 0%, #6b5644 100%);">
+                    <div class="image-placeholder">
+                        <span>TROUSERS</span>
+                    </div>
+                    <div class="product-badge">NEW ARRIVAL</div>
+                </div>
+                <div class="product-details">
+                    <h3>Wide Leg Trousers</h3>
+                    <p class="product-category">Separates</p>
+                    <p class="product-description">High-waisted wool blend trousers</p>
+                    <p class="product-price">$1,250</p>
+                    <a href="product-detail.html?item=wide-leg-trousers" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="dresses">
+                <div class="product-image" style="background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);">
+                    <div class="image-placeholder">
+                        <span>LITTLE BLACK DRESS</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>The Essential LBD</h3>
+                    <p class="product-category">Cocktail</p>
+                    <p class="product-description">Timeless black dress in stretch crepe</p>
+                    <p class="product-price">$1,650</p>
+                    <a href="product-detail.html?item=essential-lbd" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <div class="product-image" style="background: linear-gradient(135deg, #c9a87c 0%, #b89968 100%);">
+                    <div class="image-placeholder">
+                        <span>TRENCH COAT</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Luxury Trench</h3>
+                    <p class="product-category">Outerwear</p>
+                    <p class="product-description">Double-breasted cotton gabardine trench</p>
+                    <p class="product-price">$2,650</p>
+                    <a href="product-detail.html?item=luxury-trench" class="product-button">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="evening">
+                <div class="product-image" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                    <div class="image-placeholder">
+                        <span>EVENING JUMPSUIT</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Statement Jumpsuit</h3>
+                    <p class="product-category">Evening Wear</p>
+                    <p class="product-description">Wide-leg silk evening jumpsuit</p>
+                    <p class="product-price">$2,250</p>
+                    <a href="product-detail.html?item=statement-jumpsuit" class="product-button">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">MAISON ÉLÉGANCE</div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="careers.html">Careers</a>
+                <a href="press.html">Press</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Pinterest</a>
+            </div>
+            <p class="footer-copyright">&copy; 2024 Maison Élégance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

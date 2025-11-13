@@ -278,3 +278,38 @@ createCursorEffect();
 
 console.log('%c MAISON ÉLÉGANCE ', 'background: #1a1a1a; color: #c9a87c; font-size: 20px; padding: 10px; font-family: serif; letter-spacing: 3px;');
 console.log('%c Luxury Fashion Experience ', 'background: #c9a87c; color: #1a1a1a; font-size: 14px; padding: 5px; letter-spacing: 2px;');
+
+// ==================== //
+// Filter Functionality for Ready-to-Wear
+// ==================== //
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const productCards = document.querySelectorAll('.product-card[data-category]');
+
+if (filterButtons.length > 0 && productCards.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Get the category to filter
+            const category = button.getAttribute('data-category');
+
+            // Filter products
+            productCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    // Add animation
+                    card.style.animation = 'fadeInUp 0.6s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
