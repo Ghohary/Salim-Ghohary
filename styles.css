@@ -59,15 +59,25 @@ h1, h2, h3, h4 {
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 30px rgba(107, 68, 35, 0.2);
     padding: 0.5rem 0;
+}
+
+.navbar.scrolled .logo-text {
+    font-size: 1.6rem;
+}
+
+.navbar.scrolled .logo-tagline {
+    font-size: 0.6rem;
 }
 
 .nav-container {
@@ -81,10 +91,34 @@ h1, h2, h3, h4 {
 
 .logo {
     font-family: 'Cormorant Garamond', serif;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-text {
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 3px;
     color: var(--primary-color);
+    display: block;
+}
+
+.logo-tagline {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    margin-top: -2px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-menu {
@@ -126,7 +160,7 @@ h1, h2, h3, h4 {
 .nav-icons {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-left: auto;
 }
 
@@ -135,14 +169,20 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: none;
     color: var(--primary-color);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
+    border-radius: 50%;
+}
+
+.nav-icon:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
 }
 
 .nav-icon svg {
@@ -150,18 +190,41 @@ h1, h2, h3, h4 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-icon:hover {
-    transform: translateY(-2px);
-}
-
 .nav-icon:hover svg {
     stroke: var(--secondary-color);
 }
 
+/* Highlight shopping bag and account icons */
+.cart-icon,
+.account-icon {
+    position: relative;
+}
+
+.cart-icon::before,
+.account-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-icon:hover::before {
+    border-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.account-icon:hover::before {
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Icon Badge Styling */
 .icon-badge {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 2px;
     background: var(--secondary-color);
     color: var(--primary-color);
     font-size: 0.65rem;
@@ -176,11 +239,25 @@ h1, h2, h3, h4 {
     opacity: 0;
     transform: scale(0);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
 .icon-badge.active {
     opacity: 1;
     transform: scale(1);
+}
+
+.cart-icon .icon-badge.active {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .hamburger {
@@ -934,8 +1011,14 @@ h1, h2, h3, h4 {
         padding: 1.5rem 1.5rem;
     }
 
-    .logo {
+    .logo-text {
         font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
+    .logo-tagline {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
     }
 
     .collection-grid {
@@ -1188,9 +1271,14 @@ h1, h2, h3, h4 {
         padding: 1rem 1rem;
     }
 
-    .logo {
+    .logo-text {
         font-size: 1.2rem;
         letter-spacing: 2px;
+    }
+
+    .logo-tagline {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
     }
 
     .nav-icons {
@@ -1488,8 +1576,14 @@ h1, h2, h3, h4 {
         letter-spacing: 2px;
     }
 
-    .logo {
+    .logo-text {
         font-size: 1.1rem;
+        letter-spacing: 1.5px;
+    }
+
+    .logo-tagline {
+        font-size: 0.5rem;
+        letter-spacing: 0.8px;
     }
 
     .nav-icon {
