@@ -85,6 +85,9 @@ function initializeHeaderIcons() {
     // Update badge counts
     updateBadges();
 
+    // Make updateBadges globally accessible
+    window.updateIconBadges = updateBadges;
+
     // Search Icon - Open search modal
     const searchIcon = document.getElementById('searchIcon');
     if (searchIcon) {
@@ -98,8 +101,12 @@ function initializeHeaderIcons() {
     if (wishlistIcon) {
         wishlistIcon.addEventListener('click', (e) => {
             e.preventDefault();
-            // For now, just show a notification
-            showIconNotification(`You have ${wishlist.length} item${wishlist.length !== 1 ? 's' : ''} in your wishlist`);
+            wishlist = JSON.parse(localStorage.getItem('ghohary-wishlist')) || [];
+            if (wishlist.length === 0) {
+                showIconNotification('Your wishlist is empty', 'info');
+            } else {
+                showIconNotification(`You have ${wishlist.length} item${wishlist.length !== 1 ? 's' : ''} in your wishlist`);
+            }
         });
     }
 
@@ -108,8 +115,12 @@ function initializeHeaderIcons() {
     if (cartIcon) {
         cartIcon.addEventListener('click', (e) => {
             e.preventDefault();
-            // For now, just show a notification
-            showIconNotification(`You have ${cart.length} item${cart.length !== 1 ? 's' : ''} in your cart`);
+            cart = JSON.parse(localStorage.getItem('ghohary-cart')) || [];
+            if (cart.length === 0) {
+                showIconNotification('Your cart is empty', 'info');
+            } else {
+                showIconNotification(`You have ${cart.length} item${cart.length !== 1 ? 's' : ''} in your cart`);
+            }
         });
     }
 
@@ -266,14 +277,15 @@ function closeSearchModal() {
 // Icon Notification
 // ==================== //
 
-function showIconNotification(message) {
+function showIconNotification(message, type = 'success') {
     const notification = document.createElement('div');
+    const bgColor = type === 'info' ? 'var(--accent-color)' : 'var(--secondary-color)';
     notification.style.cssText = `
         position: fixed;
         top: 100px;
         right: 30px;
         padding: 1rem 1.5rem;
-        background: var(--secondary-color);
+        background: ${bgColor};
         color: var(--primary-color);
         border-radius: 5px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
