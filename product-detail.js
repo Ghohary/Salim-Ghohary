@@ -241,3 +241,193 @@ document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
 
 // Load product details when page loads
 document.addEventListener('DOMContentLoaded', loadProductDetails);
+
+// ==================== //
+// Cart and Wishlist Functionality for Product Detail Page
+// ==================== //
+
+function initializeProductButtons() {
+    const productId = getProductFromURL();
+
+    if (!productId || !products[productId]) {
+        return;
+    }
+
+    const product = products[productId];
+    const wishlist = JSON.parse(localStorage.getItem('ghohary-wishlist')) || [];
+    const cart = JSON.parse(localStorage.getItem('ghohary-cart')) || [];
+
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const addToWishlistBtn = document.getElementById('addToWishlistBtn');
+
+    // Check if product is already in cart or wishlist
+    const inCart = cart.some(item => item.id === productId);
+    const inWishlist = wishlist.some(item => item.id === productId);
+
+    // Update button states
+    if (inCart && addToCartBtn) {
+        addToCartBtn.innerHTML = '✓ In Cart';
+        addToCartBtn.style.background = 'var(--accent-color)';
+    }
+
+    if (inWishlist && addToWishlistBtn) {
+        addToWishlistBtn.innerHTML = '❤️';
+        addToWishlistBtn.style.borderColor = 'var(--secondary-color)';
+    }
+
+    // Add to Cart button
+    if (addToCartBtn && !inCart) {
+        addToCartBtn.addEventListener('click', () => {
+            const productData = {
+                id: productId,
+                title: product.title,
+                price: product.price,
+                category: product.category,
+                description: product.description,
+                addedAt: new Date().toISOString()
+            };
+
+            const currentCart = JSON.parse(localStorage.getItem('ghohary-cart')) || [];
+            if (!currentCart.some(item => item.id === productId)) {
+                currentCart.push(productData);
+                localStorage.setItem('ghohary-cart', JSON.stringify(currentCart));
+
+                // Update button
+                addToCartBtn.innerHTML = '✓ In Cart';
+                addToCartBtn.style.background = 'var(--accent-color)';
+
+                // Update badges
+                updateBadges();
+
+                // Trigger cart animation
+                const cartIcon = document.getElementById('cartIcon');
+                if (cartIcon) {
+                    cartIcon.style.animation = 'none';
+                    setTimeout(() => {
+                        cartIcon.style.animation = 'pulse 0.6s ease';
+                    }, 10);
+                }
+
+                // Show notification
+                showProductNotification(`${product.title} added to cart!`, 'success');
+            }
+        });
+    }
+
+    // Add to Wishlist button
+    if (addToWishlistBtn) {
+        addToWishlistBtn.addEventListener('click', () => {
+            const productData = {
+                id: productId,
+                title: product.title,
+                price: product.price,
+                category: product.category,
+                description: product.description,
+                addedAt: new Date().toISOString()
+            };
+
+            const currentWishlist = JSON.parse(localStorage.getItem('ghohary-wishlist')) || [];
+            const itemIndex = currentWishlist.findIndex(item => item.id === productId);
+
+            if (itemIndex === -1) {
+                // Add to wishlist
+                currentWishlist.push(productData);
+                localStorage.setItem('ghohary-wishlist', JSON.stringify(currentWishlist));
+
+                addToWishlistBtn.innerHTML = '❤️';
+                addToWishlistBtn.style.borderColor = 'var(--secondary-color)';
+
+                showProductNotification(`${product.title} added to wishlist!`, 'success');
+            } else {
+                // Remove from wishlist
+                currentWishlist.splice(itemIndex, 1);
+                localStorage.setItem('ghohary-wishlist', JSON.stringify(currentWishlist));
+
+                addToWishlistBtn.innerHTML = '🤍';
+                addToWishlistBtn.style.borderColor = '#ddd';
+
+                showProductNotification(`${product.title} removed from wishlist`, 'info');
+            }
+
+            updateBadges();
+        });
+
+        // Hover effects
+        addToWishlistBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+
+        addToWishlistBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    }
+}
+
+function updateBadges() {
+    const wishlist = JSON.parse(localStorage.getItem('ghohary-wishlist')) || [];
+    const cart = JSON.parse(localStorage.getItem('ghohary-cart')) || [];
+
+    const wishlistBadge = document.getElementById('wishlistBadge');
+    const cartBadge = document.getElementById('cartBadge');
+
+    if (wishlistBadge) {
+        wishlistBadge.textContent = wishlist.length;
+        if (wishlist.length > 0) {
+            wishlistBadge.classList.add('active');
+        } else {
+            wishlistBadge.classList.remove('active');
+        }
+    }
+
+    if (cartBadge) {
+        cartBadge.textContent = cart.length;
+        if (cart.length > 0) {
+            cartBadge.classList.add('active');
+        } else {
+            cartBadge.classList.remove('active');
+        }
+    }
+
+    // Update shared.js if the function exists
+    if (window.updateIconBadges) {
+        window.updateIconBadges();
+    }
+}
+
+function showProductNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `product-notification notification-${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        padding: 1.2rem 1.8rem;
+        background: ${type === 'success' ? 'var(--secondary-color)' : type === 'info' ? 'var(--accent-color)' : '#e74c3c'};
+        color: var(--primary-color);
+        border-radius: 5px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        z-index: 10002;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        max-width: 350px;
+        animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-weight: 500;
+    `;
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) reverse';
+        setTimeout(() => {
+            notification.remove();
+        }, 400);
+    }, 3000);
+}
+
+// Initialize buttons after product details are loaded
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        initializeProductButtons();
+    }, 100);
+});
